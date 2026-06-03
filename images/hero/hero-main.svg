@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Golden-hour placeholder — replace with your hero photo">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(108 .5 .5)">
+      <stop offset="0" stop-color="#1a1009"/>
+      <stop offset=".55" stop-color="#5f3115"/>
+      <stop offset="1" stop-color="#b86a28"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="26%" r="60%">
+      <stop offset="0" stop-color="#efb15a" stop-opacity=".6"/>
+      <stop offset=".45" stop-color="#efb15a" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#efb15a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="48%" r="80%">
+      <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0705" stop-opacity=".5"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <rect width="1600" height="1000" fill="url(#vig)"/>
+  <rect width="1600" height="1000" filter="url(#grain)" opacity=".05" style="mix-blend-mode:overlay"/>
+</svg>

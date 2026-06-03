@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-label="PLACES / 02 — placeholder">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(108 .5 .5)">
+      <stop offset="0" stop-color="#241608"/>
+      <stop offset=".58" stop-color="#7a3f18"/>
+      <stop offset="1" stop-color="#b86a28"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="22%" r="62%">
+      <stop offset="0" stop-color="#efb15a" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#efb15a" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#efb15a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="78%">
+      <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0705" stop-opacity=".55"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#g)"/>
+  <rect width="1200" height="1500" fill="url(#glow)"/>
+  <rect width="1200" height="1500" fill="url(#vig)"/>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity=".05" style="mix-blend-mode:overlay"/>
+  <g fill="#f3ede3" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">
+    <line x1="574" y1="720" x2="626" y2="720" stroke="#f3ede3" stroke-opacity=".5"/>
+    <text x="600" y="746" font-size="41" letter-spacing="14" fill-opacity=".82">PLACES / 02</text>
+    <text x="600" y="810" font-size="24" letter-spacing="3" fill-opacity=".5">REPLACE WITH YOUR PHOTO</text>
+  </g>
+  <text x="28" y="1476" fill="#f3ede3" fill-opacity=".45" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" letter-spacing="3">RK STUDIOS</text>
+  <text x="1172" y="1476" text-anchor="end" fill="#f3ede3" fill-opacity=".45" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" letter-spacing="2">4:5</text>
+</svg>
