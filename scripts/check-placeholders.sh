@@ -22,6 +22,9 @@ for file in ${HTML_FILES}; do
   # Remove HTML comments first
   sanitized=$(sed -E ':a;N;$!ba;s/<!--(.|\n)*?-->//g' "$file" 2>/dev/null || true)
 
+  # Drop <script>...</script> blocks (e.g. JSON-LD structured data, which legitimately contains [ ] arrays)
+  sanitized=$(printf "%s" "$sanitized" | perl -0777 -pe 's{<script\b[^>]*>.*?</script>}{}gis' 2>/dev/null || printf "%s" "$sanitized")
+
   # Drop class/style attributes to avoid CSS/Tailwind bracket tokens (e.g., grid-cols-[auto,1fr], bg-[#000])
   stripped=$(printf "%s" "$sanitized" | sed -E "s/class=\"[^\"]*\"//g; s/class='[^']*'//g; s/style=\"[^\"]*\"//g; s/style='[^']*'//g")
 

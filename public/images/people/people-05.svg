@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-label="PEOPLE / 05 — placeholder">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(117 .5 .5)">
+      <stop offset="0" stop-color="#121110"/>
+      <stop offset=".58" stop-color="#2b2825"/>
+      <stop offset="1" stop-color="#4a4641"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="60%" cy="26%" r="62%">
+      <stop offset="0" stop-color="#6f6a64" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#6f6a64" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#6f6a64" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="46%" r="78%">
+      <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0705" stop-opacity=".55"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+  <rect width="1280" height="1280" fill="url(#g)"/>
+  <rect width="1280" height="1280" fill="url(#glow)"/>
+  <rect width="1280" height="1280" fill="url(#vig)"/>
+  <rect width="1280" height="1280" filter="url(#grain)" opacity=".05" style="mix-blend-mode:overlay"/>
+  <g fill="#f3ede3" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">
+    <line x1="614" y1="610" x2="666" y2="610" stroke="#f3ede3" stroke-opacity=".5"/>
+    <text x="640" y="636" font-size="44" letter-spacing="15" fill-opacity=".82">PEOPLE / 05</text>
+    <text x="640" y="704" font-size="26" letter-spacing="3" fill-opacity=".5">REPLACE WITH YOUR PHOTO</text>
+  </g>
+  <text x="28" y="1256" fill="#f3ede3" fill-opacity=".45" font-family="'Helvetica Neue',Arial,sans-serif" font-size="23" letter-spacing="3">RK STUDIOS</text>
+  <text x="1252" y="1256" text-anchor="end" fill="#f3ede3" fill-opacity=".45" font-family="'Helvetica Neue',Arial,sans-serif" font-size="23" letter-spacing="2">1:1</text>
+</svg>

@@ -1,412 +1,426 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags - AI: Update these for each website -->
-  <title>[Business Name] - [Your Tagline]</title>
-  <meta name="description" content="[Describe your business in 150-160 characters for search engines]">
-  <meta name="keywords" content="[keyword1, keyword2, keyword3]">
-  
-  <!-- Open Graph Meta Tags - AI: Update for social media sharing -->
-  <meta property="og:title" content="[Business Name] - [Your Tagline]">
-  <meta property="og:description" content="[Describe your business for social media]">
+  <meta name="theme-color" content="#161310">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>RK Studios · Ramil Ugot · Grand Cayman Photographer</title>
+  <meta name="description" content="RK Studios · Ramil Ugot, a Grand Cayman photographer shooting couples, families, maternity and weddings in golden-hour light. People, places & perspective across the Cayman Islands. Inquire about a shoot.">
+  <link rel="canonical" href="https://rkstudios.ky/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="RK Studios · Ramil Ugot · Grand Cayman Photographer">
+  <meta property="og:description" content="Couples, families & the island at golden hour. Boutique photography in the Cayman Islands. Inquire about a shoot.">
   <meta property="og:image" content="/images/og-image.jpg">
-  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:url" content="https://rkstudios.ky/">
   <meta property="og:type" content="website">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico">
-  
-  <!-- Styles - Don't edit these directly -->
+  <meta property="og:site_name" content="RK Studios">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RK Studios · Ramil Ugot · Grand Cayman Photographer">
+  <meta name="twitter:description" content="Couples, families & the island at golden hour. Boutique photography in the Cayman Islands.">
+  <meta name="twitter:image" content="/images/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
   <link rel="stylesheet" href="/src/main.css">
-  
-  <!-- Alpine.js for interactivity -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+
+  <!-- Structured data: real local business so search + maps understand the studio -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "RK Studios",
+    "image": "https://rkstudios.ky/images/og-image.jpg",
+    "description": "Boutique photography studio in Grand Cayman: couples, families, maternity, weddings and events by Ramil Ugot.",
+    "founder": { "@type": "Person", "name": "Ramil Ugot" },
+    "telephone": "+1-345-917-8203",
+    "areaServed": "Cayman Islands",
+    "address": { "@type": "PostalAddress", "addressLocality": "George Town", "addressRegion": "Grand Cayman", "addressCountry": "KY" },
+    "sameAs": ["https://www.instagram.com/ramilugot/", "https://www.threads.net/@ramilugot"]
+  }
+  </script>
 </head>
-<body class="flex h-full flex-col bg-white antialiased">
-  
-  <!-- Header Navigation - Mobile-friendly with hamburger menu -->
-  <header class="py-10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="relative z-50 flex justify-between" x-data="{ mobileMenuOpen: false }">
-        <div class="flex items-center md:gap-x-12">
-          <!-- Logo - AI: Replace with business logo or name -->
-          <a href="#" aria-label="Home" class="flex items-center">
-            <svg class="h-10 w-auto" viewBox="0 0 140 40" fill="none">
-              <rect x="0" y="8" width="24" height="24" rx="4" fill="#3B82F6"/>
-              <path d="M8 20L12 24L20 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="32" y="26" font-family="system-ui" font-size="20" font-weight="700" fill="#1E293B">[Logo]</text>
-            </svg>
-          </a>
-          
-          <!-- Desktop Navigation - AI: Add/remove menu items as needed -->
-          <div class="hidden md:flex md:gap-x-6">
-            <a href="/about.html" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">About</a>
-            <a href="/services.html" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Services</a>
-            <a href="/contact.html" class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Contact</a>
-          </div>
-        </div>
-        
-        <div class="flex items-center gap-x-5 md:gap-x-8">
-          <!-- Call-to-Action Button - AI: Update text and link -->
-          <a href="/contact.html" class="rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700">
-            Get Started
-          </a>
-          
-          <!-- Mobile menu button -->
-          <div class="-mr-1 md:hidden">
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="relative z-10 flex h-8 w-8 items-center justify-center">
-              <svg class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
-                <path d="M0 1H14M0 7H14M0 13H14" :class="mobileMenuOpen && 'scale-90 opacity-0'" class="origin-center transition"></path>
-                <path d="M2 2L12 12M12 2L2 12" :class="!mobileMenuOpen && 'scale-90 opacity-0'" class="origin-center transition"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        
-        <!-- Mobile Navigation - AI: Keep in sync with desktop menu -->
-        <div x-show="mobileMenuOpen" 
-             x-transition:enter="transition ease-out duration-150"
-             x-transition:enter-start="opacity-0 scale-95"
-             x-transition:enter-end="opacity-100 scale-100"
-             x-transition:leave="transition ease-in duration-100"
-             x-transition:leave-start="opacity-100 scale-100"
-             x-transition:leave-end="opacity-0 scale-95"
-             @click.away="mobileMenuOpen = false"
-             class="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 md:hidden">
-          <a href="/about.html" @click="mobileMenuOpen = false" class="block w-full p-2">About</a>
-          <a href="/services.html" @click="mobileMenuOpen = false" class="block w-full p-2">Services</a>
-          <a href="/contact.html" @click="mobileMenuOpen = false" class="block w-full p-2">Contact</a>
-        </div>
+<body class="flex min-h-full flex-col">
+  <a href="#work" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-amber focus:px-5 focus:py-2 focus:text-volcanic">Skip to work</a>
+
+  <!-- CONCEPT-PREVIEW BAR — demo only. To remove for a real launch: delete this block AND change the header below from `top-9` back to `top-0`. -->
+  <div class="fixed inset-x-0 top-0 z-[60] flex h-9 items-center justify-center gap-2 border-b border-paper/10 bg-volcanic-soft/95 px-4 text-center text-[0.68rem] tracking-wide text-paper-dim backdrop-blur">
+    <span class="h-1.5 w-1.5 flex-none rounded-full bg-amber"></span>
+    <span><span class="font-semibold text-paper">Concept preview</span> · placeholder photos<span class="hidden sm:inline"> · an unofficial concept, not affiliated with RK Studios</span></span>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header fixed inset-x-0 top-9 z-50">
+    <div class="header-pad mx-auto flex max-w-[1500px] items-center justify-between px-6 py-6 sm:px-8 lg:px-14">
+      <a href="#top" class="flex items-baseline gap-3" aria-label="RK Studios, home">
+        <span class="font-sans text-sm font-semibold uppercase tracking-[0.34em] text-paper">RK&nbsp;Studios</span>
+      </a>
+
+      <nav class="hidden items-center gap-9 md:flex" aria-label="Primary">
+        <a href="#work" class="link-underline text-sm tracking-wide text-paper-dim hover:text-paper">Work</a>
+        <a href="#about" class="link-underline text-sm tracking-wide text-paper-dim hover:text-paper">About</a>
+        <a href="#words" class="link-underline text-sm tracking-wide text-paper-dim hover:text-paper">Praise</a>
+        <a href="#contact" class="btn btn-amber"><span>Inquire</span></a>
       </nav>
+
+      <button type="button" class="relative z-50 flex h-10 w-10 items-center justify-center md:hidden" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menu</span>
+        <svg width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden="true">
+          <line x1="0" y1="1" x2="22" y2="1" stroke="currentColor" stroke-width="1.4" class="text-paper"/>
+          <line x1="0" y1="11" x2="22" y2="11" stroke="currentColor" stroke-width="1.4" class="text-paper"/>
+        </svg>
+      </button>
     </div>
   </header>
-  
-  <main class="flex-auto">
-    
-    <!-- Hero Section - AI: Use py-20 sm:py-32 for consistent spacing -->
-    <section class="relative overflow-hidden py-20 sm:py-32">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto text-center">
-          <!-- Main Headline - AI: Make this compelling -->
-          <h1 class="font-display text-4xl tracking-tight text-slate-900 sm:text-6xl">
-            Welcome to [Business Name]
-          </h1>
-          <!-- Subheadline - AI: Explain what you do -->
-          <p class="mt-6 text-lg tracking-tight text-slate-700">
-            [Describe your business value proposition in 1-2 sentences. What problems do you solve?]
-          </p>
-          <!-- Hero Buttons - AI: Keep consistent with rounded-full bg-blue-600 px-6 py-3 pattern -->
-          <div class="mt-10 flex justify-center gap-x-6">
-            <a href="/contact.html" class="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700">
-              Get Started
-            </a>
-            <a href="/about.html" class="rounded-full bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-200">
-              Learn More
-            </a>
-          </div>
-        </div>
-        <!-- Hero Image - AI: Replace with business-relevant image -->
-        <div class="mt-16 max-w-4xl mx-auto">
-          <img src="https://placehold.co/1024x576/e2e8f0/64748b?text=[Hero+Image]" 
-               alt="[Describe the hero image]" 
-               class="rounded-lg shadow-xl">
+
+  <!-- Mobile menu overlay -->
+  <div class="menu-overlay md:hidden" id="mobile-menu" data-menu>
+    <button type="button" class="absolute right-6 top-6 flex h-10 w-10 items-center justify-center text-paper" data-menu-close aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><line x1="1" y1="1" x2="21" y2="21" stroke="currentColor" stroke-width="1.4"/><line x1="21" y1="1" x2="1" y2="21" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+    <nav class="flex flex-col gap-2" aria-label="Mobile">
+      <a href="#work" data-menu-link style="--d:80ms">Work</a>
+      <a href="#about" data-menu-link style="--d:160ms">About</a>
+      <a href="#words" data-menu-link style="--d:240ms">Praise</a>
+      <a href="#contact" data-menu-link style="--d:320ms">Inquire</a>
+    </nav>
+    <div class="mt-12 text-sm tracking-wide text-driftwood" style="--d:420ms">
+      <a href="tel:+13459178203" class="link-underline">+1 345 917 8203</a>
+    </div>
+  </div>
+
+  <main class="flex-auto" id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
+      <div class="hero-media absolute inset-0 -z-10">
+        <img src="/images/hero/hero-main.jpg" alt="A couple silhouetted against a golden-hour sky on a Grand Cayman beach" width="1600" height="1000" fetchpriority="high" decoding="async" class="h-full w-full object-cover">
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(22,19,16,.55) 0%, rgba(22,19,16,.12) 30%, rgba(22,19,16,.25) 62%, rgba(22,19,16,.92) 100%)"></div>
+      </div>
+
+      <div class="mx-auto w-full max-w-[1500px] px-6 pb-20 pt-36 sm:px-8 lg:px-14 lg:pb-28">
+        <p class="hero-rise eyebrow mb-6" style="--d:200ms">People&nbsp;·&nbsp;Places&nbsp;·&nbsp;Perspective</p>
+        <h1 class="max-w-5xl">
+          <span class="hero-rise block font-sans text-sm font-semibold uppercase tracking-[0.4em] text-paper-dim" style="--d:320ms">RK Studios · Ramil Ugot</span>
+          <span class="hero-rise display-hero mt-4 block text-paper text-balance" style="--d:460ms">Visual <span class="italic-accent text-amber">Poetry</span></span>
+        </h1>
+        <p class="hero-rise lead mt-7 max-w-xl text-pretty" style="--d:600ms">
+          A Grand Cayman photographer for couples, families and the island at golden hour. Quiet, cinematic, made to be lived with.
+        </p>
+        <div class="hero-rise mt-10 flex flex-wrap items-center gap-4" style="--d:740ms">
+          <a href="#contact" class="btn btn-amber"><span>Inquire about a shoot</span></a>
+          <a href="#work" class="btn btn-ghost"><span>View the work</span></a>
         </div>
       </div>
+
+      <a href="#work" class="hero-rise group absolute bottom-7 right-6 hidden items-center gap-3 text-xs uppercase tracking-[0.25em] text-paper-dim sm:right-8 sm:flex lg:right-14" style="--d:1000ms" aria-label="Scroll to work">
+        Scroll
+        <span class="block h-10 w-px origin-top bg-paper-dim/50"></span>
+      </a>
     </section>
-    
-    <!-- Features Section - AI: Use py-20 sm:py-32 for consistent spacing -->
-    <section class="py-20 sm:py-32 bg-slate-50">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Why Choose [Business Name]
+
+    <!-- ===================== POSITIONING STRIP ===================== -->
+    <section class="bg-paper text-volcanic">
+      <div class="mx-auto max-w-[1500px] px-6 py-24 sm:px-8 md:py-36 lg:px-14">
+        <div class="grid items-end gap-10 md:grid-cols-12">
+          <p data-reveal class="eyebrow md:col-span-3" style="color:color-mix(in srgb, #161310 55%, transparent)">The studio</p>
+          <h2 data-reveal class="display-lg md:col-span-9 text-balance" style="--reveal-delay:120ms">
+            Light is the whole language here. I photograph the people who matter to you the way Grand Cayman gives its best hour: <span class="italic-accent" style="color:var(--color-amber)">warm, unhurried, true</span>.
           </h2>
-          <p class="mt-4 text-lg tracking-tight text-slate-700">
-            [What makes your business unique or better than competitors]
-          </p>
         </div>
-        
-        <!-- Feature Cards - AI: Maintain rounded-2xl p-8 shadow-sm pattern -->
-        <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <div class="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="mt-6 text-lg font-semibold text-slate-900">[Feature/Benefit]</h3>
-            <p class="mt-2 text-slate-600">[Explain this feature or benefit to customers]</p>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section id="work" class="section-anchor py-24 md:py-36">
+      <div class="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-14">
+
+        <!-- ---- PEOPLE ---- -->
+        <div class="mb-16 flex items-end justify-between gap-6 md:mb-20">
+          <div>
+            <p data-reveal class="eyebrow mb-4">01 · People</p>
+            <h2 data-reveal class="display-md text-balance" style="--reveal-delay:100ms">Couples, families &amp; the in-between</h2>
           </div>
-          
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <div class="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h3 class="mt-6 text-lg font-semibold text-slate-900">[Feature/Benefit]</h3>
-            <p class="mt-2 text-slate-600">[Explain this feature or benefit to customers]</p>
+          <p data-reveal class="hidden max-w-xs text-sm text-paper-dim md:block" style="--reveal-delay:160ms">Engagements, maternity, newborns and weddings, photographed for the feeling, not the pose.</p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-12 md:gap-7">
+          <button type="button" class="gallery-item md:col-span-7" data-lightbox data-cursor="view" data-title="Last light, North Sound" data-meta="People · Engagement" data-reveal>
+            <div class="media aspect-[3/2]"><img src="/images/people/people-01.jpg" alt="Engaged couple embracing at sunset on a Grand Cayman beach" width="1500" height="1000" loading="lazy" decoding="async" sizes="(min-width:768px) 58vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">Last light, North Sound</span><span class="caption__meta">Engagement</span></span>
+          </button>
+          <button type="button" class="gallery-item md:col-span-5 md:mt-20" data-lightbox data-cursor="view" data-title="The Guhls" data-meta="People · Family" data-reveal style="--reveal-delay:90ms">
+            <div class="media aspect-[4/5]"><img src="/images/people/people-02.jpg" alt="Black and white portrait of parents smiling at their newborn" width="1200" height="1500" loading="lazy" decoding="async" sizes="(min-width:768px) 40vw, 100vw" style="filter:grayscale(1)"></div>
+            <span class="caption"><span class="caption__title">The Guhls</span><span class="caption__meta">Family · B&amp;W</span></span>
+          </button>
+
+          <button type="button" class="gallery-item md:col-span-5" data-lightbox data-cursor="view" data-title="Expecting" data-meta="People · Maternity" data-reveal>
+            <div class="media aspect-[4/5]"><img src="/images/people/people-03.jpg" alt="Maternity silhouette standing in shallow water at golden hour" width="1200" height="1500" loading="lazy" decoding="async" sizes="(min-width:768px) 40vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">Expecting</span><span class="caption__meta">Maternity</span></span>
+          </button>
+          <button type="button" class="gallery-item md:col-span-7 md:-mt-16" data-lightbox data-cursor="view" data-title="All four of us" data-meta="People · Family" data-reveal style="--reveal-delay:90ms">
+            <div class="media aspect-[3/2]"><img src="/images/people/people-04.jpg" alt="Family of four laughing together in the surf" width="1500" height="1000" loading="lazy" decoding="async" sizes="(min-width:768px) 58vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">All four of us</span><span class="caption__meta">Family</span></span>
+          </button>
+
+          <button type="button" class="gallery-item md:col-span-6 md:col-start-4 md:mt-6" data-lightbox data-cursor="view" data-title="I do" data-meta="People · Wedding" data-reveal>
+            <div class="media aspect-square"><img src="/images/people/people-05.jpg" alt="Black and white photograph of a wedding kiss" width="1280" height="1280" loading="lazy" decoding="async" sizes="(min-width:768px) 50vw, 100vw" style="filter:grayscale(1)"></div>
+            <span class="caption"><span class="caption__title">I do</span><span class="caption__meta">Wedding · B&amp;W</span></span>
+          </button>
+        </div>
+
+        <!-- ---- full-bleed parallax break ---- -->
+        <div data-reveal class="relative my-24 md:my-32">
+          <div class="media aspect-[16/10] md:aspect-[21/8]">
+            <img data-parallax src="/images/places/places-01.jpg" alt="Palm-lined Cayman shoreline under a golden sky at dusk" width="1600" height="900" loading="lazy" decoding="async" sizes="100vw" class="scale-110">
           </div>
-          
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <div class="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
+        </div>
+
+        <!-- ---- PLACES ---- -->
+        <div class="mb-16 flex items-end justify-between gap-6 md:mb-20">
+          <div>
+            <p data-reveal class="eyebrow mb-4">02 · Places</p>
+            <h2 data-reveal class="display-md text-balance" style="--reveal-delay:100ms">The island, between the light</h2>
+          </div>
+          <p data-reveal class="hidden max-w-xs text-sm text-paper-dim md:block" style="--reveal-delay:160ms">Cayman's skies and shoreline, the backdrop your story already happens against.</p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-12 md:gap-7">
+          <button type="button" class="gallery-item md:col-span-5" data-lightbox data-cursor="view" data-title="A lone palm" data-meta="Places · Landscape" data-reveal>
+            <div class="media aspect-[4/5]"><img src="/images/places/places-02.jpg" alt="A single palm tree silhouetted against a burning sunset" width="1200" height="1500" loading="lazy" decoding="async" sizes="(min-width:768px) 40vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">A lone palm</span><span class="caption__meta">Landscape</span></span>
+          </button>
+          <button type="button" class="gallery-item md:col-span-7 md:mt-24" data-lightbox data-cursor="view" data-title="Gold on the water" data-meta="Places · Seascape" data-reveal style="--reveal-delay:90ms">
+            <div class="media aspect-[3/2]"><img src="/images/places/places-03.jpg" alt="Golden light breaking over calm Caribbean water" width="1500" height="1000" loading="lazy" decoding="async" sizes="(min-width:768px) 58vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">Gold on the water</span><span class="caption__meta">Seascape</span></span>
+          </button>
+        </div>
+
+        <!-- ---- PERSPECTIVE ---- -->
+        <div class="mb-16 mt-24 flex items-end justify-between gap-6 md:mb-20 md:mt-36">
+          <div>
+            <p data-reveal class="eyebrow mb-4">03 · Perspective</p>
+            <h2 data-reveal class="display-md text-balance" style="--reveal-delay:100ms">A way of seeing</h2>
+          </div>
+          <p data-reveal class="hidden max-w-xs text-sm text-paper-dim md:block" style="--reveal-delay:160ms">Events, carnival and the editorial frames, where the work gets loud on purpose.</p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-12 md:gap-7">
+          <button type="button" class="gallery-item md:col-span-5" data-lightbox data-cursor="view" data-title="See you on the road" data-meta="Perspective · CayMAS" data-reveal>
+            <div class="media aspect-[4/5]"><img src="/images/perspective/perspective-01.jpg" alt="CayMAS carnival masquerader in a vivid red and orange feathered costume" width="1200" height="1500" loading="lazy" decoding="async" sizes="(min-width:768px) 40vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">See you on the road</span><span class="caption__meta">CayMAS Carnival</span></span>
+          </button>
+          <button type="button" class="gallery-item md:col-span-7 md:mt-20" data-lightbox data-cursor="view" data-title="We all deserve this" data-meta="Perspective · Dusk" data-reveal style="--reveal-delay:90ms">
+            <div class="media aspect-[3/2]"><img src="/images/perspective/perspective-02.jpg" alt="A couple in silhouette beneath a dramatic mauve dusk sky" width="1500" height="1000" loading="lazy" decoding="async" sizes="(min-width:768px) 58vw, 100vw"></div>
+            <span class="caption"><span class="caption__title">We all deserve this</span><span class="caption__meta">Dusk</span></span>
+          </button>
+          <button type="button" class="gallery-item md:col-span-4 md:col-start-5 md:mt-6" data-lightbox data-cursor="view" data-title="In her eyes" data-meta="Perspective · Detail" data-reveal>
+            <div class="media aspect-square"><img src="/images/perspective/perspective-03.jpg" alt="Close black and white detail study of a subject's eyes" width="1280" height="1280" loading="lazy" decoding="async" sizes="(min-width:768px) 33vw, 100vw" style="filter:grayscale(1)"></div>
+            <span class="caption"><span class="caption__title">In her eyes</span><span class="caption__meta">Detail · B&amp;W</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section-anchor bg-paper text-volcanic">
+      <div class="mx-auto max-w-[1500px] px-6 py-24 sm:px-8 md:py-36 lg:px-14">
+        <div class="grid items-center gap-12 md:grid-cols-12 md:gap-16">
+          <div data-reveal class="md:col-span-5">
+            <div class="media aspect-[4/5]"><img src="/images/about/portrait.jpg" alt="Portrait of photographer Ramil Ugot" width="1200" height="1500" loading="lazy" decoding="async" sizes="(min-width:768px) 40vw, 100vw"></div>
+          </div>
+          <div class="md:col-span-7">
+            <p data-reveal class="eyebrow mb-6" style="color:color-mix(in srgb, #161310 55%, transparent)">About</p>
+            <h2 data-reveal class="display-lg text-balance" style="--reveal-delay:100ms">Hi, I'm Ramil.</h2>
+            <!-- ABOUT COPY — written for Ramil but UNVERIFIED. Confirm the personal details with him before showing
+                 (esp. "Caymanian by home, Filipino by heart" and the documentary/love-letter framing). See PLACEHOLDERS.md. -->
+            <div data-reveal class="mt-7 max-w-xl space-y-5 text-[1.05rem] leading-relaxed text-pretty" style="--reveal-delay:180ms; color:color-mix(in srgb, #161310 78%, transparent)">
+              <p>I'm a photographer based in George Town, Grand Cayman. Caymanian by home, Filipino by heart. For years I've made my living chasing the island's best light and the people standing in it.</p>
+              <p>My work lives somewhere between documentary and a love letter: real moments, warm tones, nothing stiff. Whether it's the morning of a wedding, a growing family, or your first trip to the island, my job is to make pictures you'll still want on the wall in twenty years.</p>
             </div>
-            <h3 class="mt-6 text-lg font-semibold text-slate-900">[Feature/Benefit]</h3>
-            <p class="mt-2 text-slate-600">[Explain this feature or benefit to customers]</p>
+            <dl data-reveal class="mt-10 grid max-w-lg grid-cols-2 gap-6 border-t pt-8" style="--reveal-delay:240ms; border-color:color-mix(in srgb,#161310 14%, transparent)">
+              <div><dt class="text-sm" style="color:color-mix(in srgb,#161310 55%, transparent)">Based</dt><dd class="mt-1 font-display text-xl">Grand Cayman</dd></div>
+              <!-- A "Shooting since YYYY" stat was here but is hidden for the demo (no confirmed start year — a question for Ramil).
+                   To restore: change grid-cols-2 above back to grid-cols-3 and add a third stat with his real year. -->
+              <div><dt class="text-sm" style="color:color-mix(in srgb,#161310 55%, transparent)">Studio</dt><dd class="mt-1 font-display text-xl">RK Studios Ltd.</dd></div>
+            </dl>
+            <a data-reveal href="#contact" class="btn btn-amber mt-10" style="--reveal-delay:300ms"><span>Check a date</span></a>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Testimonials Section - AI: Use py-20 sm:py-32 for consistent spacing -->
-    <section class="py-20 sm:py-32">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            What Our Customers Say
-          </h2>
-          <p class="mt-4 text-lg tracking-tight text-slate-700">
-            [Real feedback from satisfied customers]
-          </p>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="words" class="section-anchor py-24 md:py-36">
+      <div class="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-14">
+        <p data-reveal class="eyebrow mb-16 text-center">Client love</p>
+        <!-- TESTIMONIALS — real 5-star Google reviews, lightly trimmed for length (no wording changed within each
+             quote). Source: Ramil's Google profile, supplied by Rich 2026-06. Two more on file if you want to rotate
+             or add a row: Steve B · Engagement, and Denise Lisa Cintron · Family/visitor. -->
+        <div class="grid gap-12 md:grid-cols-3 md:gap-10">
+          <figure data-reveal class="text-center md:text-left">
+            <span class="font-display text-6xl leading-none text-amber" aria-hidden="true">&ldquo;</span>
+            <blockquote class="-mt-4 font-display text-xl leading-snug text-balance">These photos aren't just pictures, they're little time capsules of our emotions, our laughter, and the quiet in-between moments.</blockquote>
+            <figcaption class="mt-5 text-xs uppercase tracking-[0.2em] text-driftwood">Berkley Ramos · Couples</figcaption>
+          </figure>
+          <figure data-reveal class="text-center md:text-left" style="--reveal-delay:120ms">
+            <span class="font-display text-6xl leading-none text-amber" aria-hidden="true">&ldquo;</span>
+            <blockquote class="-mt-4 font-display text-xl leading-snug text-balance">He managed to capture every special moment so naturally and beautifully that looking through the photos feels like reliving the entire day.</blockquote>
+            <figcaption class="mt-5 text-xs uppercase tracking-[0.2em] text-driftwood">Kathy · Wedding</figcaption>
+          </figure>
+          <figure data-reveal class="text-center md:text-left" style="--reveal-delay:240ms">
+            <span class="font-display text-6xl leading-none text-amber" aria-hidden="true">&ldquo;</span>
+            <blockquote class="-mt-4 font-display text-xl leading-snug text-balance">Ramil was able to connect with my very stubborn four year old and got amazing pictures of her. We absolutely melted looking through all of our photos.</blockquote>
+            <figcaption class="mt-5 text-xs uppercase tracking-[0.2em] text-driftwood">Gabriella Kapitaniuk · Family</figcaption>
+          </figure>
         </div>
-        
-        <!-- Testimonial Cards - AI: Maintain rounded-2xl p-6 shadow-sm pattern -->
-        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="text-lg text-slate-900">"[Customer testimonial - what they loved about your service]"</p>
-            <div class="mt-6 flex items-center gap-x-4">
-              <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold">
-                [I]
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-slate-900">[Customer Name]</p>
-                <p class="text-sm text-slate-600">[Title/Company]</p>
-              </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / BOOKING ===================== -->
+    <section id="contact" class="section-anchor bg-volcanic-soft py-24 md:py-36">
+      <div class="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-14">
+        <div class="grid gap-14 md:grid-cols-12 md:gap-20">
+          <div class="md:col-span-5">
+            <p data-reveal class="eyebrow mb-6">Booking</p>
+            <h2 data-reveal class="display-lg text-balance" style="--reveal-delay:100ms">Let's make something you'll keep.</h2>
+            <p data-reveal class="lead mt-6 max-w-md" style="--reveal-delay:160ms">Tell me a little about the shoot. I reply to every inquiry personally, usually within a day.</p>
+
+            <div data-reveal class="mt-10 space-y-5" style="--reveal-delay:220ms">
+              <a href="tel:+13459178203" class="group flex items-center gap-4">
+                <span class="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-paper/15 text-amber">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                </span>
+                <span><span class="block text-xs uppercase tracking-[0.18em] text-driftwood">Call or text</span><span class="link-underline text-lg">+1 345 917 8203</span></span>
+              </a>
+              <a href="https://wa.me/13459178203?text=Hi%20Ramil%2C%20I%27d%20like%20to%20ask%20about%20a%20shoot." target="_blank" rel="noopener" class="group flex items-center gap-4">
+                <span class="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-paper/15 text-amber">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.04c-.25.7-1.44 1.34-1.99 1.39-.51.05-1.16.07-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.95-4.3-5.1-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.008.42-.07.66.5.25.59.84 2.04.91 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.12.07.72-.18 1.42Z"/></svg>
+                </span>
+                <span><span class="block text-xs uppercase tracking-[0.18em] text-driftwood">WhatsApp</span><span class="link-underline text-lg">Message on WhatsApp</span></span>
+              </a>
+              <a href="https://www.instagram.com/ramilugot/" target="_blank" rel="noopener" class="group flex items-center gap-4">
+                <span class="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-paper/15 text-amber">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <span><span class="block text-xs uppercase tracking-[0.18em] text-driftwood">Instagram</span><span class="link-underline text-lg">@ramilugot</span></span>
+              </a>
             </div>
           </div>
-          
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="text-lg text-slate-900">"[Customer testimonial - specific results or benefits]"</p>
-            <div class="mt-6 flex items-center gap-x-4">
-              <div class="h-10 w-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-semibold">
-                [I]
+
+          <div class="md:col-span-7">
+            <!-- No backend required: submitting builds a pre-filled WhatsApp message Ramil receives.
+                 To capture by email instead, set data-endpoint to a Formspree/Netlify URL. -->
+            <form data-inquiry class="grid gap-7 sm:grid-cols-2" novalidate>
+              <div class="field sm:col-span-1">
+                <label for="f-name" class="eyebrow">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Jane Doe">
+                <p class="field__error" data-error-for="name"></p>
               </div>
-              <div>
-                <p class="text-sm font-semibold text-slate-900">[Customer Name]</p>
-                <p class="text-sm text-slate-600">[Title/Company]</p>
+              <div class="field sm:col-span-1">
+                <label for="f-email" class="eyebrow">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="jane@email.com">
+                <p class="field__error" data-error-for="email"></p>
               </div>
-            </div>
-          </div>
-          
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
-            <p class="text-lg text-slate-900">"[Customer testimonial - why they recommend you]"</p>
-            <div class="mt-6 flex items-center gap-x-4">
-              <div class="h-10 w-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-semibold">
-                [I]
+              <div class="field sm:col-span-1">
+                <label for="f-type" class="eyebrow">Shoot type</label>
+                <select id="f-type" name="shoot" required>
+                  <option value="" disabled selected>Choose one…</option>
+                  <option>Couples / Engagement</option>
+                  <option>Family</option>
+                  <option>Maternity / Newborn</option>
+                  <option>Wedding</option>
+                  <option>Event / Carnival</option>
+                  <option>Other</option>
+                </select>
+                <p class="field__error" data-error-for="shoot"></p>
               </div>
-              <div>
-                <p class="text-sm font-semibold text-slate-900">[Customer Name]</p>
-                <p class="text-sm text-slate-600">[Title/Company]</p>
+              <div class="field sm:col-span-1">
+                <label for="f-date" class="eyebrow">Preferred date</label>
+                <input id="f-date" name="date" type="date">
+                <p class="field__error" data-error-for="date"></p>
               </div>
+              <div class="field sm:col-span-2">
+                <label for="f-message" class="eyebrow">A little about it</label>
+                <textarea id="f-message" name="message" rows="3" required placeholder="Where, who, and the kind of photos you're hoping for…"></textarea>
+                <p class="field__error" data-error-for="message"></p>
+              </div>
+              <div class="sm:col-span-2">
+                <button type="submit" class="btn btn-amber w-full justify-center sm:w-auto"><span>Send inquiry</span></button>
+              </div>
+            </form>
+
+            <div class="form-success mt-2" data-success>
+              <p class="font-display text-2xl">Thank you, that's on its way.</p>
+              <p class="mt-2 text-paper-dim">I've put your details together. Tap below to send them straight to me on WhatsApp, or I'll see your message and reply by email shortly.</p>
+              <a href="#" target="_blank" rel="noopener" class="btn btn-amber mt-6" data-success-wa><span>Send on WhatsApp</span></a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Call to Action Section - AI: Use contrasting white button on blue background -->
-    <section class="bg-blue-600 py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Ready to Get Started?
-          </h2>
-          <p class="mt-4 text-lg tracking-tight text-blue-100">
-            [Add a compelling call to action message]
-          </p>
-          <a href="/contact.html" class="mt-8 inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-600 hover:bg-blue-50">
-            Contact Us Today
-          </a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Contact Section - AI: Use py-20 sm:py-32 for consistent spacing -->
-    <section id="contact" class="py-20 sm:py-32">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Contact Us
-          </h2>
-          <p class="mt-4 text-lg tracking-tight text-slate-700">
-            [How customers can reach you]
-          </p>
-        </div>
-        
-        <!-- Contact Information - AI: Add real contact details -->
-        <div class="mt-16 max-w-xl mx-auto">
-          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
-            <div class="space-y-4">
-              <p class="text-slate-600">
-                <strong>Phone:</strong> [Your phone number]
-              </p>
-              <p class="text-slate-600">
-                <strong>Email:</strong> [Your email]
-              </p>
-              <p class="text-slate-600">
-                <strong>Address:</strong> [Your business address]
-              </p>
-              <p class="text-slate-600">
-                <strong>Hours:</strong> [Your business hours]
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Pricing Section - AI: Use py-20 sm:py-32 for consistent spacing, remove if not needed -->
-    <section class="bg-slate-50 py-20 sm:py-32">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simple, Transparent Pricing
-          </h2>
-          <p class="mt-4 text-lg text-slate-700">
-            [Pricing subtitle or value proposition]
-          </p>
-        </div>
-        
-        <!-- Pricing Cards - AI: Maintain rounded-2xl border p-8 pattern, highlight popular plan -->
-        <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
-          <!-- Basic Plan -->
-          <div class="rounded-2xl border border-slate-200 p-8">
-            <h3 class="text-lg font-semibold text-slate-900">[Plan Name]</h3>
-            <p class="mt-4 text-sm text-slate-700">[Perfect for who?]</p>
-            <p class="mt-8">
-              <span class="text-4xl font-bold text-slate-900">$[X]</span>
-              <span class="text-base font-medium text-slate-700">/month</span>
-            </p>
-            <ul class="mt-8 space-y-4 text-sm text-slate-700">
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Feature included]
-              </li>
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Feature included]
-              </li>
-            </ul>
-            <a href="/contact.html" class="mt-8 block w-full rounded-full bg-slate-900 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-slate-700">
-              Get Started
-            </a>
-          </div>
-          
-          <!-- Popular Plan -->
-          <div class="rounded-2xl border border-blue-600 p-8 shadow-lg">
-            <h3 class="text-lg font-semibold text-slate-900">[Plan Name]</h3>
-            <p class="mt-4 text-sm text-slate-700">[Most popular choice]</p>
-            <p class="mt-8">
-              <span class="text-4xl font-bold text-slate-900">$[X]</span>
-              <span class="text-base font-medium text-slate-700">/month</span>
-            </p>
-            <ul class="mt-8 space-y-4 text-sm text-slate-700">
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Everything in basic]
-              </li>
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Additional feature]
-              </li>
-            </ul>
-            <a href="/contact.html" class="mt-8 block w-full rounded-full bg-blue-600 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-blue-700">
-              Get Started
-            </a>
-          </div>
-          
-          <!-- Enterprise Plan -->
-          <div class="rounded-2xl border border-slate-200 p-8">
-            <h3 class="text-lg font-semibold text-slate-900">[Plan Name]</h3>
-            <p class="mt-4 text-sm text-slate-700">[For larger needs]</p>
-            <p class="mt-8">
-              <span class="text-4xl font-bold text-slate-900">Custom</span>
-            </p>
-            <ul class="mt-8 space-y-4 text-sm text-slate-700">
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Everything included]
-              </li>
-              <li class="flex gap-x-3">
-                <svg class="h-6 w-5 flex-none text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-                [Custom solutions]
-              </li>
-            </ul>
-            <a href="/contact.html" class="mt-8 block w-full rounded-full bg-slate-900 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-slate-700">
-              Contact Sales
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
   </main>
-  
-  <!-- Footer -->
-  <footer class="bg-slate-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="py-16">
-        <!-- Footer Logo/Name -->
-        <div class="flex justify-center">
-          <a href="#" class="text-slate-900 font-bold text-xl">[Business Name]</a>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-paper/10 py-16">
+    <div class="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-14">
+      <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="font-sans text-sm font-semibold uppercase tracking-[0.34em] text-paper">RK&nbsp;Studios</p>
+          <p class="mt-3 max-w-xs text-sm text-driftwood">Visual poetry from Grand Cayman. People, places &amp; perspective by Ramil Ugot.</p>
         </div>
-        <!-- Footer Navigation - AI: Keep simple -->
-        <nav class="mt-10 text-sm" aria-label="Footer navigation">
-          <div class="-my-1 flex justify-center gap-x-6">
-            <a href="/about.html" class="rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">About</a>
-            <a href="/services.html" class="rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Services</a>
-            <a href="/contact.html" class="rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900">Contact</a>
-          </div>
+        <nav class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-paper-dim" aria-label="Footer">
+          <a href="#work" class="link-underline hover:text-paper">Work</a>
+          <a href="#about" class="link-underline hover:text-paper">About</a>
+          <a href="#words" class="link-underline hover:text-paper">Praise</a>
+          <a href="#contact" class="link-underline hover:text-paper">Inquire</a>
+          <a href="https://www.instagram.com/ramilugot/" target="_blank" rel="noopener" class="link-underline hover:text-paper">Instagram</a>
+          <a href="https://www.threads.net/@ramilugot" target="_blank" rel="noopener" class="link-underline hover:text-paper">Threads</a>
         </nav>
       </div>
-      <div class="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
-        <div class="flex gap-x-6">
-          <!-- AI: Add social media links if needed -->
-          <a href="#" class="group" aria-label="Twitter">
-            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" viewBox="0 0 24 24">
-              <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z"/>
-            </svg>
-          </a>
-          <a href="#" class="group" aria-label="GitHub">
-            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" viewBox="0 0 24 24">
-              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
-            </svg>
-          </a>
-        </div>
-        <p class="mt-6 text-sm text-slate-500 sm:mt-0">
-          Copyright &copy; <span x-text="new Date().getFullYear()"></span> [Business Name]. All rights reserved.
-        </p>
+      <div class="hairline my-10"></div>
+      <div class="flex flex-col gap-3 text-xs text-driftwood sm:flex-row sm:items-center sm:justify-between">
+        <p>George Town, Grand Cayman · <a href="tel:+13459178203" class="link-underline">+1 345 917 8203</a></p>
+        <p>© <span data-year>2026</span> RK Studios Ltd. All rights reserved.</p>
       </div>
+      <!-- Honesty note for the demo. Remove once Ramil's real photos are in. -->
+      <p class="mt-6 text-center text-[0.7rem] leading-relaxed text-driftwood/70 sm:text-left">Demo build. Photography shown is licensed stock used for layout only; final images to be supplied by Ramil&nbsp;Ugot · RK&nbsp;Studios.</p>
     </div>
   </footer>
-  
+
+  <!-- Persistent, quiet CTA -->
+  <a href="#contact" class="btn btn-amber fixed bottom-5 right-5 z-40 translate-y-24 opacity-0 shadow-lg transition-all duration-500 ease-out" data-cta-float><span>Inquire</span></a>
+
+  <!-- Custom "View" cursor -->
+  <div class="cursor-view" data-cursor-el aria-hidden="true"><div class="cursor-view__bubble">View</div></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" data-lightbox-root role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-backdrop></div>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" data-lightbox-img alt="">
+    </div>
+    <div class="lightbox__chrome">
+      <button type="button" class="lb-btn lb-close" data-lightbox-close aria-label="Close viewer">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none" aria-hidden="true"><line x1="1" y1="1" x2="21" y2="21" stroke="currentColor" stroke-width="1.5"/><line x1="21" y1="1" x2="1" y2="21" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button type="button" class="lb-btn lb-prev" data-lightbox-prev aria-label="Previous image">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="lb-btn lb-next" data-lightbox-next aria-label="Next image">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="lightbox__caption">
+        <span data-lightbox-caption></span>
+        <span class="lightbox__counter" data-lightbox-counter></span>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
